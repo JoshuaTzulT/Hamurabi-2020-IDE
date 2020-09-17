@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hamurabi
 {
-    public partial class Form1 : Form
+    public partial class Hamurabi_Ventana : Form
     {
-        public Form1()
+        public Hamurabi_Ventana()
         {
             InitializeComponent();
         }
