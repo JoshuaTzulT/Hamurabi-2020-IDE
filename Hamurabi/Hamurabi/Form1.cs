@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -30,7 +31,7 @@ namespace Hamurabi
                     inicio++;
                     break;
                 }
-            } 
+            }
             //Calcula la posición final de la linea actual
             for (final = editorDeTexto.SelectionStart; final < editorDeTexto.Text.Length; final++)
             {
@@ -53,7 +54,7 @@ namespace Hamurabi
                 editorDeTexto.SelectionStart = indice;
                 editorDeTexto.SelectionLength = token.Length;
                 editorDeTexto.SelectionColor = Color.Yellow;
-               // editorDeTexto.SelectionFont = new Font("Verdana", 13, FontStyle.Regular);
+                // editorDeTexto.SelectionFont = new Font("Verdana", 13, FontStyle.Regular);
 
 
                 ///Revisa si hay un comentario
@@ -65,7 +66,7 @@ namespace Hamurabi
                     editorDeTexto.SelectionStart = indice;
                     editorDeTexto.SelectionLength = longi;
                     editorDeTexto.SelectionColor = Color.Red;
-                   // editorDeTexto.SelectionFont = new Font("Courier New", 10, FontStyle.Regular);
+                    // editorDeTexto.SelectionFont = new Font("Courier New", 10, FontStyle.Regular);
                     break;
                 }
 
@@ -76,7 +77,7 @@ namespace Hamurabi
                     editorDeTexto.SelectionStart = indice;
                     editorDeTexto.SelectionLength = longi;
                     editorDeTexto.SelectionColor = Color.Red;
-                 //   editorDeTexto.SelectionFont = new Font("Courier New", 10, FontStyle.Regular);
+                    //   editorDeTexto.SelectionFont = new Font("Courier New", 10, FontStyle.Regular);
 
                     // richTextBox1.SelectionColor = Color.Yellow;
                     break;
@@ -89,6 +90,44 @@ namespace Hamurabi
             editorDeTexto.SelectionLength = longitudSeleccion;
 
         }
-    }
 
+        private void guardarToolStripButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Guardar";
+            sfd.Filter = "Documento de Texto (*.gtE)|*.gtE";
+            sfd.DefaultExt = "gtE";
+            sfd.AddExtension = true;
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {//inicio condicional if
+
+                StreamWriter txtSalida = new StreamWriter(sfd.FileName);
+                txtSalida.Write(editorDeTexto.Text);
+                txtSalida.Close();
+
+            }//fin condicional if
+
+        }
+
+        private void abrirToolStripButton_Click(object sender, EventArgs e)
+        {
+            //Método del botón para abrir un archivo.
+            {//Inicio del método
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = " ";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {//Inicio condicional If
+                    editorDeTexto.Clear();
+                    using (StreamReader sr = new StreamReader(ofd.FileName))
+                    {
+                        editorDeTexto.Text = sr.ReadToEnd();
+                        sr.Close();
+
+                    }
+                }//fin condicional if.
+            }
+        }
+
+    }
 }
