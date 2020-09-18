@@ -98,6 +98,89 @@ namespace Hamurabi
                     break;
                 }//fin condicional if
 
+                // Comprueba si el token es una Keyword 
+                String[] reconocimiento = {"Entero", "Decimal", "Cadena", "Boolean", "Chart", "+",
+                                           "-", "*", "*", "/", "!", "<", ">", ">=", "<=",  "==",
+                                           "||", "&&", "(", ")", "=", ";",  "!=",
+                                           "SI", "SINO", "SINO_SI", "MIENTRAS", "HACER", "DESDE",
+                                           "HASTA", "INCREMENTO",};
+
+                for (int i = 0; i < reconocimiento.Length; i++)
+                {
+                    if (reconocimiento[i] == token && token == "Entero")
+                    {
+                        //Aplica un color y fuente diferente a la keyword.      
+                        editorDeTexto.SelectionColor = Color.Purple;
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        break;
+                    }
+
+                    if (reconocimiento[i] == token && token == "Decimal")
+                    {
+                        //Aplica un color y fuente diferente a la keyword.      
+                        editorDeTexto.SelectionColor = Color.Turquoise;
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        break;
+                    }
+
+
+                    if (reconocimiento[i] == token && token == "Cadena")
+                    {
+                        //Aplica un color y fuente diferente a la keyword.      
+                        editorDeTexto.SelectionColor = Color.Gray;
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        break;
+                    }
+
+
+                    if (reconocimiento[i] == token && token == "Boolean")
+                    {
+                        //Aplica un color y fuente diferente a la keyword.      
+                        editorDeTexto.SelectionColor = Color.Orange;
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        break;
+                    }
+
+
+                    if (reconocimiento[i] == token && token == "Chart")
+                    {
+                        //Aplica un color y fuente diferente a la keyword.      
+                        editorDeTexto.SelectionColor = Color.Brown;
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        break;
+                    }
+
+
+                    if (reconocimiento[i] == token && (token == "+" || token == "-" || token == "*" || token == "/"
+                        || token == "<" || token == ">" || token == ">=" || token == "<=" || token == "==" || token == "!="
+                        || token == "||" || token == "&&" || token == "(" || token == ")"))
+                    {
+                        //Aplica un color y fuente diferente a la keyword.      
+                        editorDeTexto.SelectionColor = Color.Blue;
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        break;
+                    }
+
+                    if (reconocimiento[i] == token && (token == "=" || token == ";"))
+                    {
+                        //Aplica un color y fuente diferente a la keyword.      
+                        editorDeTexto.SelectionColor = Color.DeepPink;
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        break;
+                    }
+
+                    if (reconocimiento[i] == token && (token == "SI" || token == "SINO"
+                        || token == "SINO_SI" || token == "MIENTRAS" || token == "HACER"
+                        || token == "DESDE" || token == "HASTA" || token == "INCREMENTO"))
+                    {
+                        //Aplica un color y fuente diferente a la keyword.      
+                        editorDeTexto.SelectionColor = Color.Green;
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        break;
+                    }
+                }
+                indice += token.Length;
+
             }// fin bucle foreach
 
             //Restaura la selección actual del usuario  
