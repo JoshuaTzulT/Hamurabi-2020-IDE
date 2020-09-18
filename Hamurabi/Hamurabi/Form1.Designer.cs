@@ -77,7 +77,8 @@
             this.ayudaToolStripMenuItem});
             this.barraMenu.Location = new System.Drawing.Point(0, 0);
             this.barraMenu.Name = "barraMenu";
-            this.barraMenu.Size = new System.Drawing.Size(799, 25);
+            this.barraMenu.Padding = new System.Windows.Forms.Padding(8, 4, 0, 4);
+            this.barraMenu.Size = new System.Drawing.Size(709, 29);
             this.barraMenu.TabIndex = 0;
             this.barraMenu.Text = "barraMenu";
             // 
@@ -261,9 +262,11 @@
             this.botonRehacer,
             this.toolStripSeparator2,
             this.botonIniciar});
-            this.barraHerramientas.Location = new System.Drawing.Point(0, 25);
+            this.barraHerramientas.Location = new System.Drawing.Point(0, 29);
             this.barraHerramientas.Name = "barraHerramientas";
-            this.barraHerramientas.Size = new System.Drawing.Size(799, 25);
+            this.barraHerramientas.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.barraHerramientas.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.barraHerramientas.Size = new System.Drawing.Size(709, 25);
             this.barraHerramientas.TabIndex = 1;
             this.barraHerramientas.Text = "barraHerramientas";
             // 
@@ -355,11 +358,13 @@
             this.editorDeTexto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.editorDeTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editorDeTexto.ForeColor = System.Drawing.Color.Gold;
-            this.editorDeTexto.Location = new System.Drawing.Point(0, 50);
+            this.editorDeTexto.Location = new System.Drawing.Point(0, 54);
+            this.editorDeTexto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.editorDeTexto.Name = "editorDeTexto";
-            this.editorDeTexto.Size = new System.Drawing.Size(799, 401);
+            this.editorDeTexto.Size = new System.Drawing.Size(709, 434);
             this.editorDeTexto.TabIndex = 2;
             this.editorDeTexto.Text = "";
+            this.editorDeTexto.TextChanged += new System.EventHandler(this.editorDeTexto_TextChanged);
             // 
             // toolStripSeparator2
             // 
@@ -377,15 +382,17 @@
             // 
             // Hamurabi_Ventana
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(799, 451);
+            this.ClientSize = new System.Drawing.Size(709, 488);
             this.Controls.Add(this.editorDeTexto);
             this.Controls.Add(this.barraHerramientas);
             this.Controls.Add(this.barraMenu);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.barraMenu;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Hamurabi_Ventana";
             this.Text = "Hamurabi";
             this.barraMenu.ResumeLayout(false);
