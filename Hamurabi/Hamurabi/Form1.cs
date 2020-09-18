@@ -129,21 +129,21 @@ namespace Hamurabi
         //Este método esta relacionado con el boton abrir 
         private void abrirToolStripButton_Click(object sender, EventArgs e)
         {//Inicio del método
-            //Método del botón para abrir un archivo.
-            {//Inicio del método
-                OpenFileDialog ofd = new OpenFileDialog();
-                ofd.Title = " ";
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {//Inicio condicional If
-                    editorDeTexto.Clear();
-                    using (StreamReader sr = new StreamReader(ofd.FileName))
-                    {
-                        editorDeTexto.Text = sr.ReadToEnd();
-                        sr.Close();
-                    }
-                }//fin condicional if.
+         //Método del botón para abrir un archivo.
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = " ";
+            if (ofd.ShowDialog() != DialogResult.OK)
+            {//Inicio condicional If
+                return;
+            }//fin condicional if.
+            editorDeTexto.Clear();
+            using (StreamReader sr = new StreamReader(ofd.FileName))
+            {
+                editorDeTexto.Text = sr.ReadToEnd();
+                sr.Close();
             }
-        }//Inicio del método
+
+        }//Final del método
 
         //Este método está relacionado con el boton Nuevo
         private void nuevoToolStripButton_Click(object sender, EventArgs e)
@@ -180,5 +180,54 @@ namespace Hamurabi
         {//Inicio del método
             editorDeTexto.Redo();
         }//Final del método
+
+        //Este método está relacionado con el boton salir del menu desplegable
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {//Inicio del método
+            Application.Exit();
+        }//Final del método
+
+        //Este método está relacionado con el boton nuevo del menu desplegable
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {//Inicio del método
+            nuevoToolStripButton.PerformClick();
+        }//Final del método
+
+        //Este método está relacionado con el boton guardar del menu desplegable
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {//Inicio del método
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Guardar";
+            sfd.Filter = "Documento de Texto (*.gtE)|*.gtE";
+            sfd.DefaultExt = "gtE";
+            sfd.AddExtension = true;
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {//inicio condicional if
+
+                StreamWriter txtSalida = new StreamWriter(sfd.FileName);
+                txtSalida.Write(editorDeTexto.Text);
+                txtSalida.Close();
+
+            }//fin condicional if
+        }//Final del método
+
+        //Este método está relacionado con el boton abrir del menu desplegable
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {//Inicio del método
+            //Método del botón para abrir un archivo.
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = " ";
+            if (ofd.ShowDialog() != DialogResult.OK)
+            {//Inicio condicional If
+                return;
+            }//fin condicional if.
+            editorDeTexto.Clear();
+            using (StreamReader sr = new StreamReader(ofd.FileName))
+            {
+                editorDeTexto.Text = sr.ReadToEnd();
+                sr.Close();
+            }
+        }//final del método
     }
 }
