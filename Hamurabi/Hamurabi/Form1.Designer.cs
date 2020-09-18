@@ -278,6 +278,7 @@
             this.nuevoToolStripButton.Name = "nuevoToolStripButton";
             this.nuevoToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.nuevoToolStripButton.Text = "&Nuevo";
+            this.nuevoToolStripButton.Click += new System.EventHandler(this.nuevoToolStripButton_Click);
             // 
             // abrirToolStripButton
             // 
@@ -312,6 +313,7 @@
             this.cortarToolStripButton.Name = "cortarToolStripButton";
             this.cortarToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.cortarToolStripButton.Text = "Cort&ar";
+            this.cortarToolStripButton.Click += new System.EventHandler(this.cortarToolStripButton_Click);
             // 
             // copiarToolStripButton
             // 
@@ -321,6 +323,7 @@
             this.copiarToolStripButton.Name = "copiarToolStripButton";
             this.copiarToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.copiarToolStripButton.Text = "&Copiar";
+            this.copiarToolStripButton.Click += new System.EventHandler(this.copiarToolStripButton_Click);
             // 
             // pegarToolStripButton
             // 
@@ -330,6 +333,7 @@
             this.pegarToolStripButton.Name = "pegarToolStripButton";
             this.pegarToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.pegarToolStripButton.Text = "&Pegar";
+            this.pegarToolStripButton.Click += new System.EventHandler(this.pegarToolStripButton_Click);
             // 
             // toolStripSeparator1
             // 
@@ -344,6 +348,7 @@
             this.botonDeshacer.Name = "botonDeshacer";
             this.botonDeshacer.Size = new System.Drawing.Size(23, 22);
             this.botonDeshacer.Text = "Deshacer";
+            this.botonDeshacer.Click += new System.EventHandler(this.botonDeshacer_Click);
             // 
             // botonRehacer
             // 
@@ -353,6 +358,7 @@
             this.botonRehacer.Name = "botonRehacer";
             this.botonRehacer.Size = new System.Drawing.Size(23, 22);
             this.botonRehacer.Text = "Rehacer";
+            this.botonRehacer.Click += new System.EventHandler(this.botonRehacer_Click);
             // 
             // toolStripSeparator2
             // 
