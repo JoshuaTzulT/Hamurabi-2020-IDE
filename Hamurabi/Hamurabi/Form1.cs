@@ -31,11 +31,16 @@ namespace Hamurabi
                     inicio++;
                     break;
                 }
-            }
+            } 
             //Calcula la posición final de la linea actual
             for (final = editorDeTexto.SelectionStart; final < editorDeTexto.Text.Length; final++)
             {
                 if (editorDeTexto.Text[final] == '\n') break;
+            }
+            //Esta condicional if, evita un error al quedar el documento en blanco
+            if (inicio<0)
+            {
+                inicio = 0;
             }
             //Extrae la linea actual que esta siendo editada
             String linea = editorDeTexto.Text.Substring(inicio, final - inicio);
@@ -54,7 +59,7 @@ namespace Hamurabi
                 editorDeTexto.SelectionStart = indice;
                 editorDeTexto.SelectionLength = token.Length;
                 editorDeTexto.SelectionColor = Color.Yellow;
-                // editorDeTexto.SelectionFont = new Font("Verdana", 13, FontStyle.Regular);
+               // editorDeTexto.SelectionFont = new Font("Verdana", 13, FontStyle.Regular);
 
 
                 ///Revisa si hay un comentario
@@ -66,7 +71,7 @@ namespace Hamurabi
                     editorDeTexto.SelectionStart = indice;
                     editorDeTexto.SelectionLength = longi;
                     editorDeTexto.SelectionColor = Color.Red;
-                    // editorDeTexto.SelectionFont = new Font("Courier New", 10, FontStyle.Regular);
+                   // editorDeTexto.SelectionFont = new Font("Courier New", 10, FontStyle.Regular);
                     break;
                 }
 
@@ -77,7 +82,7 @@ namespace Hamurabi
                     editorDeTexto.SelectionStart = indice;
                     editorDeTexto.SelectionLength = longi;
                     editorDeTexto.SelectionColor = Color.Red;
-                    //   editorDeTexto.SelectionFont = new Font("Courier New", 10, FontStyle.Regular);
+                 //   editorDeTexto.SelectionFont = new Font("Courier New", 10, FontStyle.Regular);
 
                     // richTextBox1.SelectionColor = Color.Yellow;
                     break;
@@ -127,7 +132,7 @@ namespace Hamurabi
                     }
                 }//fin condicional if.
             }
-        }
-
     }
+
 }
+    }
