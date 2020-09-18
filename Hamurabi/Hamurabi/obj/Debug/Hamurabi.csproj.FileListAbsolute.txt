@@ -1,0 +1,10 @@
+C:\Users\Toshiba\Documents\GitHub\Hamurabi-2020-IDE\Hamurabi\Hamurabi\bin\Debug\Hamurabi.exe.config
+C:\Users\Toshiba\Documents\GitHub\Hamurabi-2020-IDE\Hamurabi\Hamurabi\bin\Debug\Hamurabi.exe
+C:\Users\Toshiba\Documents\GitHub\Hamurabi-2020-IDE\Hamurabi\Hamurabi\bin\Debug\Hamurabi.pdb
+C:\Users\Toshiba\Documents\GitHub\Hamurabi-2020-IDE\Hamurabi\Hamurabi\obj\Debug\Hamurabi.csprojAssemblyReference.cache
+C:\Users\Toshiba\Documents\GitHub\Hamurabi-2020-IDE\Hamurabi\Hamurabi\obj\Debug\Hamurabi.Hamurabi_Ventana.resources
+C:\Users\Toshiba\Documents\GitHub\Hamurabi-2020-IDE\Hamurabi\Hamurabi\obj\Debug\Hamurabi.Properties.Resources.resources
+C:\Users\Toshiba\Documents\GitHub\Hamurabi-2020-IDE\Hamurabi\Hamurabi\obj\Debug\Hamurabi.csproj.GenerateResource.cache
+C:\Users\Toshiba\Documents\GitHub\Hamurabi-2020-IDE\Hamurabi\Hamurabi\obj\Debug\Hamurabi.csproj.CoreCompileInputs.cache
+C:\Users\Toshiba\Documents\GitHub\Hamurabi-2020-IDE\Hamurabi\Hamurabi\obj\Debug\Hamurabi.exe
+C:\Users\Toshiba\Documents\GitHub\Hamurabi-2020-IDE\Hamurabi\Hamurabi\obj\Debug\Hamurabi.pdb
