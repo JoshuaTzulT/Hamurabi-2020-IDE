@@ -103,7 +103,7 @@
             this.nuevoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(176, 28);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(186, 28);
             this.nuevoToolStripMenuItem.Text = "&Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
@@ -384,7 +384,7 @@
             this.editorDeTexto.BackColor = System.Drawing.SystemColors.MenuText;
             this.editorDeTexto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.editorDeTexto.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editorDeTexto.ForeColor = System.Drawing.Color.Gold;
+            this.editorDeTexto.ForeColor = System.Drawing.Color.White;
             this.editorDeTexto.Location = new System.Drawing.Point(0, 54);
             this.editorDeTexto.Margin = new System.Windows.Forms.Padding(4);
             this.editorDeTexto.Name = "editorDeTexto";

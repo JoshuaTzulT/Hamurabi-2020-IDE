@@ -22,20 +22,23 @@ namespace Hamurabi
             InitializeComponent();
             
         }
+        
 
 
-
-        public void contador()
-        {
+        //Este método se encargar de contar la posición actual del cursor dentro del area de edición de texto.
+        public void Contador()
+        {//Inicio del método
             int fila = 1 + editorDeTexto.GetLineFromCharIndex(editorDeTexto.GetFirstCharIndexOfCurrentLine());
             int columna = 1 + editorDeTexto.SelectionStart - editorDeTexto.GetFirstCharIndexOfCurrentLine();
             label1.Text = "Fila: " + fila.ToString() + "  Columna: " + columna.ToString();
-        }
+        }//final del método
+
+
 
         //Este métddo pertenece a toda el area de texto, es decir donde el usuario escribe.
         private void editorDeTexto_TextChanged(object sender, EventArgs e)
         {//Inicio del método
-            contador();
+            Contador();
 
             //Este bucle for calcula la posición inicial de la linea 
 
@@ -79,7 +82,7 @@ namespace Hamurabi
                 //Establece  el color por defecto de la fuente
                 editorDeTexto.SelectionStart = indice;
                 editorDeTexto.SelectionLength = token.Length;
-                editorDeTexto.SelectionColor = Color.Yellow;
+                editorDeTexto.SelectionColor = Color.White;
                 editorDeTexto.SelectionFont = new Font("Verdana", 14, FontStyle.Regular);
 
 
@@ -108,7 +111,7 @@ namespace Hamurabi
                 }//fin condicional if
 
                 // Comprueba si el token es una Keyword 
-                String[] reconocimiento = {"Entero","entero", "Decimal","decimal", "Cadena", "cadena", "Boolean", "booleano", "carácter", "Chart", 
+                String[] reconocimiento = {"Entero","entero", "Decimal","decimal", "Cadena", "cadena", "Boolean", "booleano", "caracter", "Chart", 
                                             "+", "-", "*", "*", "/", "!", "<", ">", ">=", "<=",  "==",
                                            "||", "&&", "(", ")", "=", ";",  "!=", "++", "--",
                                            "SI", "SINO", "SINO_SI", "MIENTRAS", "HACER", "DESDE",
@@ -128,7 +131,7 @@ namespace Hamurabi
                     {
                         //Aplica un color y fuente diferente a la keyword.      
                         editorDeTexto.SelectionColor = Color.Turquoise;
-                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Bold);
                         break;
                     }
 
@@ -137,7 +140,7 @@ namespace Hamurabi
                     {
                         //Aplica un color y fuente diferente a la keyword.      
                         editorDeTexto.SelectionColor = Color.Gray;
-                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Bold);
                         break;
                     }
 
@@ -146,16 +149,16 @@ namespace Hamurabi
                     {
                         //Aplica un color y fuente diferente a la keyword.      
                         editorDeTexto.SelectionColor = Color.Orange;
-                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Bold);
                         break;
                     }
 
 
-                    if (reconocimiento[i] == token && token == "Chart"  || reconocimiento[i] == token && token == "carácter ")
+                    if (reconocimiento[i] == token && token == "Chart"  || reconocimiento[i] == token && token == "caracter")
                     {
                         //Aplica un color y fuente diferente a la keyword.      
                         editorDeTexto.SelectionColor = Color.Brown;
-                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Bold);
                         break;
                     }
 
@@ -166,7 +169,7 @@ namespace Hamurabi
                     {
                         //Aplica un color y fuente diferente a la keyword.      
                         editorDeTexto.SelectionColor = Color.Blue;
-                        editorDeTexto.SelectionFont = new Font("Courier New", 18, FontStyle.Italic);
+                        editorDeTexto.SelectionFont = new Font("Courier New", 18, FontStyle.Bold);
                         break;
                     }
 
@@ -174,7 +177,7 @@ namespace Hamurabi
                     {
                         //Aplica un color y fuente diferente a la keyword.      
                         editorDeTexto.SelectionColor = Color.DeepPink;
-                        editorDeTexto.SelectionFont = new Font("Courier New", 18, FontStyle.Italic);
+                        editorDeTexto.SelectionFont = new Font("Courier New", 18, FontStyle.Bold);
                         break;
                     }
 
@@ -184,7 +187,7 @@ namespace Hamurabi
                     {
                         //Aplica un color y fuente diferente a la keyword.      
                         editorDeTexto.SelectionColor = Color.Green;
-                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Italic);
+                        editorDeTexto.SelectionFont = new Font("Courier New", 14, FontStyle.Bold);
                         break;
                     }
                 }
